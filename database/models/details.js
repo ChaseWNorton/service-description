@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const detailsSchema = mongoose.Schema({
-  id: { type: String, unique: true },
+  id: { type: Number, unique: true },
   details: String,
-  photos: [String],
+  photos: Array,
 
 });
 

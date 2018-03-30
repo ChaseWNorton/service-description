@@ -4,7 +4,7 @@ import {shallow, mount} from 'enzyme';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
-import Description from '../client/src/components/Description';
+import Description from '../pages/components/Description';
 
 Enzyme.configure({ adapter: new Adapter() });
 
