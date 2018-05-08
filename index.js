@@ -13,25 +13,6 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
-  server.get("/events/:id/details", (req, res) => {
-    const eventId = req.params.id;
-    // app.render(req, res, "/details", queryParams);
-    redis.get(eventId, function(err, reply) {
-      if (err) console.log(err);
-      else if (reply) {
-        app.render(req, res, "/details", reply);
-      } else {
-        mongoose.connect("mongodb://localhost/meetup_details");
-        Model.Details.findOne({ id: eventId })
-          .select("-_id")
-          .then(data => {
-            redis.set(`${eventId}`, JSON.stringify(data));
-            app.render(req, res, "/details", reply);
-          });
-      }
-    });
-  });
-
   server.get("/api/event/:eventid", (req, res) => {
     const eventId = `${req.params.eventid}`;
     const actualPage = `/event/${eventId}/post`;
