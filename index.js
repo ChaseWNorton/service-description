@@ -4,7 +4,7 @@ const path = require("path");
 const Model = require("./database/models/details");
 const redisClient = require("redis").createClient;
 const next = require("next");
-const port = parseInt(process.env.PORT, 10) || 3006;
+const port = parseInt(process.env.PORT, 10) || 3007;
 const dev = process.env.NODE_ENV !== "production";
 const redis = redisClient(6379, "localhost");
 const app = next({ dev });

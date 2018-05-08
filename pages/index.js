@@ -16,9 +16,10 @@ class App extends React.Component {
   }
 
   static async getInitialProps(props) {
-    let result = await fetch(`http://localhost:3006/events/${props.query.post}`)
+    let result = await fetch(`http://localhost:3007/events/${props.query.post}/details`)
+    console.log(result)
     let state = await result.json();
-	console.log(state);
+	  console.log(state);
     return {
       details: state.details,
       photos: state.photos
