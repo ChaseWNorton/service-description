@@ -34,7 +34,7 @@ app.prepare().then(() => {
 
   server.get("/api/event/:eventid", (req, res) => {
     const eventId = `${req.params.eventid}`;
-    const actualPage = "/event/44/post";
+    const actualPage = `/event/${eventId}/post`;
     redis.get(eventId, function(err, reply) {
       if (err) console.log(err);
       else if (reply) {
