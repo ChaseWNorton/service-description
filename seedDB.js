@@ -1,7 +1,6 @@
 const fake = require("faker");
 const Model = require("./database/models/details.js");
 const mongoose = require("mongoose");
-const co = require("co");
 require("events").EventEmitter.prototype._maxListeners = 100;
 
 mongoose.connect("mongodb://localhost/meetup_details");
@@ -21,7 +20,6 @@ function* magic() {
       };
       inputArr.push(obj);
       counter++;
-      console.log(counter);
     }
     console.log(`done${j}`);
     let taco = yield Model.Details.insertMany(inputArr);

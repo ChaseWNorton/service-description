@@ -10,8 +10,8 @@
   "scripts": {
     "start": "webpack -d && node server/server.js",
     "dev-build": "webpack -d --watch",
-    "dev-start": "nodemon server/index.js",
-    "seed": "node worker.js",
+    "dev-start": "nodemon index.js",
+    "seed": "node seedDB.js",
     "lint": "eslint . --ext .js,.jsx",
     "test": "jest",
     "dev": "next -p 4000",
